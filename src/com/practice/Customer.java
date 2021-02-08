@@ -10,7 +10,7 @@ public class Customer {
 
     public Customer(String name) {
         this.name = name;
-        this.transactions = new ArrayList<>();
+        this.transactions = new ArrayList<Double>();
     }
 
     public String getName() {
