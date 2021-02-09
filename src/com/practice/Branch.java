@@ -3,19 +3,28 @@ package com.practice;
 import java.util.ArrayList;
 
 public class Branch {
-    private String newCustomer;
     private ArrayList<Customer> customers;
+    private String branchName;
 
-    public Branch(String newCustomer) {
-        this.newCustomer = newCustomer;
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public Branch(String name) {
+        this.branchName = name;
         this.customers =  new ArrayList<>();
     }
 
     public boolean initialiseCustomer(Customer newCustomer){
-        if(findCustomer(newCustomer.getName())>=0) {
+        if(findCustomer(newCustomer.getName()) < 0) {
             this.customers.add(newCustomer);
+            return true;
         }
-        return true;
+        return false;
     }
 
     public boolean addingTransaction(Customer customer, double addTransaction){

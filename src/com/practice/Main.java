@@ -20,6 +20,13 @@ public class Main {
     // Add a transaction for an existing customer for that branch
     // Show a list of customers for a particular branch and optionally a list
     // of their transactions
+
+    /*  Scheme
+    *  ArrayLists: Bank ->      Branch ->       Customer
+    *                           methods         blueprint
+    *
+    * */
+
     // Demonstration autoboxing and unboxing in your code
     // Hint: Transactions
     // Add data validation.
@@ -27,6 +34,23 @@ public class Main {
     // Think about where you are adding the code to perform certain actions
 
     public static void main(String[] args) {
-	// write your code here
+        Bank bank = new Bank("National Australia Bank");
+        System.out.println(bank.getBankName());
+
+        //doesnt work?
+        bank.addingBranch("Adelaide");
+        for(int i = 0; i < bank.getBranches().size(); i++)
+        System.out.println(bank.getBranches());
+
+
+        bank.addCustomerWithInitTrans("Adelaide", 50.05);
+        bank.addCustomerWithInitTrans("Danila", 175.34);
+        bank.addCustomerWithInitTrans("Max", 220.12);
+
+        bank.addTransaction("Adelaide", 44.22);
+        bank.addTransaction("Tim", 12.44);
+        bank.addTransaction("Mike", 1.65);
+
+        bank.listingCustomers("Adelaide");
     }
 }
