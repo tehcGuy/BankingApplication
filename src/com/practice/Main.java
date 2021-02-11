@@ -47,7 +47,7 @@ public class Main {
         bank.addCustomerWithInitTrans("Danila", 175.34);
         bank.addCustomerWithInitTrans("Max", 220.12);
 
-        bank.addTransaction("Adelaide", 44.22);
+        bank.addTransaction("Howdy", 44.22);
         bank.addTransaction("Tim", 12.44);
         bank.addTransaction("Mike", 1.65);
 
