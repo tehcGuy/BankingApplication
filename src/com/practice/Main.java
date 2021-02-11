@@ -22,10 +22,10 @@ public class Main {
     // of their transactions
 
     /*  Scheme
-    *  ArrayLists: Bank ->      Branch ->       Customer
-    *                           methods         blueprint
-    *
-    * */
+     *  ArrayLists: Bank ->      Branch ->       Customer
+     *                           methods         blueprint
+     *
+     * */
 
     // Demonstration autoboxing and unboxing in your code
     // Hint: Transactions
@@ -40,7 +40,7 @@ public class Main {
         //doesnt work?
         bank.addingBranch("Adelaide");
         for(int i = 0; i < bank.getBranches().size(); i++)
-        System.out.println(bank.getBranches());
+            System.out.println(bank.getBranches());
 
 
         bank.addCustomerWithInitTrans("Adelaide", 50.05);

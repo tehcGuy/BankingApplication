@@ -14,16 +14,16 @@ public class Bank {
         this.bankName = bankName;
         this.branches = new ArrayList<Branch>();
     }
+
     //last modification
-    public boolean addingBranch (String branchName){
+    public boolean addingBranch(String branchName) {
         Branch findOne = findBranch(branchName);
-        if( findOne == null){
+        if(findOne == null) {
             branches.add(new Branch(branchName));
             return true;
         }
         return false;
     }
-
 
 
     private Branch findBranch(String searchedBranch) {
