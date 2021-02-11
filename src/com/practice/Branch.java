@@ -19,18 +19,11 @@ public class Branch {
         this.customers = new ArrayList<>();
     }
 
-    public boolean initialiseCustomer(String name, double initAmount) {
+    //3rd inner
+
+    public boolean addingCustomer(String name, double initAmount) {
         if(findCustomer(name) == null) {
             this.customers.add(new Customer(name, initAmount)); //initialazing a customer in the parenthesis !
-            return true;
-        }
-        return false;
-    }
-
-    public boolean addingTransaction(String customer, double addTransaction) {
-        Customer existingCustomer = findCustomer(customer);
-        if(existingCustomer != null) {
-            existingCustomer.getTransactions().add(addTransaction); // adding a new transaction
             return true;
         }
         return false;
@@ -45,6 +38,19 @@ public class Branch {
         }
         return null;
     }
+
+    // 4th inner
+
+    public boolean addingTransaction(String customer, double addTransaction) {
+        Customer existingCustomer = findCustomer(customer);
+        if(existingCustomer != null) {
+            existingCustomer.getTransactions().add(addTransaction); // adding a new transaction
+            return true;
+        }
+        return false;
+    }
+
+
     //note: .equals() returns true or false but .contains() the index and wont stop the iteration
 
 }

@@ -34,23 +34,23 @@ public class Main {
     // Think about where you are adding the code to perform certain actions
 
     public static void main(String[] args) {
-        Bank bank = new Bank("National Australia Bank");
-        System.out.println(bank.getBankName());
+            Bank bank = new Bank("National Australia Bank");
+            System.out.println(bank.getBankName());
 
-        //doesnt work?
-        bank.addingBranch("Adelaide");
-        for(int i = 0; i < bank.getBranches().size(); i++)
-            System.out.println(bank.getBranches());
+            //doesnt work?
+            bank.addingBranch("Adelaide");
+            for(int i = 0; i < bank.getBranches().size(); i++)
+                System.out.println(bank.getBranches().get(i).getBranchName());
 
 
-        bank.addCustomerWithInitTrans("Adelaide", 50.05);
-        bank.addCustomerWithInitTrans("Danila", 175.34);
-        bank.addCustomerWithInitTrans("Max", 220.12);
+            bank.addingCustomer("Adelaide", 50.05);
+            bank.addingCustomer("Danila", 175.34);
+            bank.addingCustomer("Max", 220.12);
 
-        bank.addTransaction("Adelaide", 44.22);
-        bank.addTransaction("Tim", 12.44);
-        bank.addTransaction("Mike", 1.65);
+            bank.addTransaction("Adelaide", 44.22);
+            bank.addTransaction("Danila", 12.44);
+            bank.addTransaction("Max", 1.65);
 
-        bank.listingCustomers("Adelaide");
+            bank.showCustomers("Adelaide");
     }
 }

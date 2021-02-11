@@ -15,7 +15,7 @@ public class Bank {
         this.branches = new ArrayList<Branch>();
     }
 
-    //last modification
+    //2nd inner
     public boolean addingBranch(String branchName) {
         Branch findOne = findBranch(branchName);
         if(findOne == null) {
@@ -25,6 +25,9 @@ public class Bank {
         return false;
     }
 
+    public ArrayList<Branch> getBranches() {
+        return branches;
+    }
 
     private Branch findBranch(String searchedBranch) {
         for(int i = 0; i < branches.size(); i++) {
@@ -34,5 +37,34 @@ public class Bank {
         }
         return null;
 
+
     }
+
+    //3rd inner
+    public boolean addingCustomer(String customerName, double initAmount) {
+        Branch customer = new Branch(customerName);
+        if(customer.addingCustomer(customerName, initAmount))
+            return true;
+        else return false;
+    }
+
+    //4th inner
+    public boolean addTransaction(String customerName, double newTransaction) {
+        Branch customer = new Branch(customerName);
+        if(customer.addingTransaction(customerName, newTransaction))
+            return true;
+        else return false;
+    }
+
+    //3rd inner
+    public boolean showCustomers(String branchName) {
+        Branch branch = findBranch(branchName);
+        if(branch != null) {
+            for(int i = 0; i < branch.getCustomers().size(); i++)
+                System.out.println(branch.getCustomers().get(i).getName());
+            return true;
+        } else return false;
+    }
+
+
 }
