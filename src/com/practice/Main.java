@@ -22,10 +22,10 @@ public class Main {
     // of their transactions
 
     /*  Scheme
-    *  ArrayLists: Bank ->      Branch ->       Customer
-    *                           methods         blueprint
-    *
-    * */
+     *  ArrayLists: Bank ->      Branch ->       Customer
+     *                           methods         blueprint
+     *
+     * */
 
     // Demonstration autoboxing and unboxing in your code
     // Hint: Transactions
@@ -37,20 +37,48 @@ public class Main {
         Bank bank = new Bank("National Australia Bank");
         System.out.println(bank.getBankName());
 
-        //doesnt work?
         bank.addingBranch("Adelaide");
-        for(int i = 0; i < bank.getBranches().size(); i++)
-        System.out.println(bank.getBranches());
+        bank.addingBranch("Fox");
+        bank.addingBranch("BNP");
+
+        System.out.println("\n");
+
+        bank.listBranches();
+        System.out.println("\n");
+
+        bank.addingCustomer("Adelaide", "Tim", 50.05);
+        bank.addingCustomer("Adelaide", "Mike", 175.34);
+        bank.addingCustomer("Adelaide", "Percy", 220.12);
+
+        bank.addingCustomer("Fox", "Egor", 0);
+        bank.listCustomers("Adelaide", true);
+
+        bank.addingTransaction("Adelaide", "Tim", 44.22);
+        bank.addingTransaction("Adelaide", "Tim", 12.44);
+        bank.addingTransaction("Adelaide", "Mike", 1.65);
 
 
-        bank.addCustomerWithInitTrans("Adelaide", 50.05);
-        bank.addCustomerWithInitTrans("Danila", 175.34);
-        bank.addCustomerWithInitTrans("Max", 220.12);
+        System.out.println("\n");
+        bank.listCustomers("Adelaide", true);
 
-        bank.addTransaction("Howdy", 44.22);
-        bank.addTransaction("Tim", 12.44);
-        bank.addTransaction("Mike", 1.65);
+        System.out.println("\n");
+        bank.listBranches();
+        System.out.println("\n");
+        bank.listCustomers("Fox", true);
 
-        bank.listingCustomers("Adelaide");
+        //testing
+        if(!bank.addingCustomer("Adelaide", "Tim", 0))
+            System.out.println("Customer exists");
+        if(!bank.addingBranch("Adelaide"))
+            System.out.println("Branch exists");
+        if(!bank.addingTransaction("Adelaide", "Roman", 0))
+            System.out.println("Oops, customer ain't exists");
+        if(!bank.addingBranch("Adelaide"))
+            System.out.println("Bank exists");
+        if(!bank.addingTransaction("Bank of America", "Roman", 0))
+            System.out.println("Oops, bank ain't exists");
+        if(!bank.listCustomers("Bank of America", false))
+            System.out.println("Oops, bank ain't exists");
+
     }
 }
