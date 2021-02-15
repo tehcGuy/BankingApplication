@@ -23,7 +23,7 @@ public class Customer {
     //4th inner
     //using the procedure in the object constructor
 
-    public void addTransaction(double addindToAccount){
+    public void addTransaction(double addindToAccount) {
         this.transactions.add(addindToAccount); // concept of autoboxing
     }
 
