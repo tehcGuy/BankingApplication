@@ -14,6 +14,7 @@ public class Branch {
         return branchName;
     }
 
+
     public Branch(String name) {
         this.branchName = name;
         this.customers = new ArrayList<>();
@@ -29,15 +30,15 @@ public class Branch {
         return false;
     }
 
-    private Customer findCustomer(String searchedCustomer) { //private because this method is used only internally in this class
-        for(int i = 0; i < this.customers.size(); i++) {
-            Customer foundOne = this.customers.get(i); //treat Customer as a data type
-            if(foundOne.equals(searchedCustomer)) {
-                return foundOne;
+            private Customer findCustomer(String searchedCustomer) { //private because this method is used only internally in this class
+            for(int i = 0; i < this.customers.size(); i++) {
+                Customer foundOne = this.customers.get(i); //treat Customer as a data type
+                if(foundOne.equals(searchedCustomer)) {
+                    return foundOne;
+                }
             }
+            return null;
         }
-        return null;
-    }
 
     // 4th inner
 

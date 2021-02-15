@@ -5,18 +5,18 @@ package com.practice;
 import java.util.ArrayList;
 
 public class Customer {
-    private String name; //could also be  = new String()
+    private String customerName; //could also be  = new String()
     private ArrayList<Double> transactions;
 
     public Customer(String name, double money) {
-        this.name = name;
+        this.customerName = name;
         this.transactions = new ArrayList<Double>();
         addTransaction(money);
     }
 
     //3rd inner
-    public String getName() {
-        return name;
+    public String getCustomerName() {
+        return customerName;
     }
 
 
